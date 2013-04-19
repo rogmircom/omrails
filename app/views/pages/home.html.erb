@@ -1,11 +1,15 @@
-<div class="hero-unit">
-	<h1>Welcome to Sample</h1>
-	<p>
-		Test application
-		<%= link_to "test", "http://www.RogerMiranda.com" %>
+<% if user_signed_in? %>
+	<h1>You're Logged In</h1>
+<% else %>
+	<div class="hero-unit">
+		<h1>Welcome to Sample</h1>
+		<p>
+			Test application
+			<%= link_to "test", "http://www.RogerMiranda.com" %>
 
-	</p>
-	<p>
-		<%=	link_to "Sign up now!", "#", class: "btn btn-primary btn-large" %>
-	</p>
-</div>
+		</p>
+		<p>
+	            <%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
+		</p>
+	</div>
+<% end %>
